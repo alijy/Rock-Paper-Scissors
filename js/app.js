@@ -7,11 +7,15 @@ var moves = ['rock', 'paper', 'scissors'];
 function play(round) {
   var input;
   if (round == 0) {
-    input = prompt("Choose one of rock[1], paper[2] or scissors[3]:")
+    alert("Let's play rock-paper-scissors!")
+    input = prompt("Choose one of rock[r], paper[p] or scissors[s]:")
   } else {
     input = prompt("Results:   You: " + yourWins + "   Computer: " + computerWins +
     "\nChoose one of rock[r], paper[p] or scissors[s]:")
   }
+  if (input == 'r') {input = 'rock';}
+  if (input == 'p') {input = 'paper';}
+  if (input == 's') {input = 'scissors';}
   return input.toLowerCase();
 }
 
@@ -78,4 +82,10 @@ while (yourWins < 3 && computerWins < 3) {
     alert("Obviously you're not a serious player!\nGoodbye!");
     break;
   }
+}
+
+if (yourWins == 3) {
+  alert("You beat computer 3-" + computerWins + "!");
+} else if (computerWins == 3) {
+  alert("Computer beats you " + yourWins + "-3!");
 }
